@@ -241,7 +241,7 @@ const Cart = () => {
     useEffect(()=>{
         const stripeRequest = async() =>{
             try{
-                const response = await axios.post("http://localhost:5000/api/checkout/payment",{
+                const response = await axios.post("https://jesus-react-ecommerce.herokuapp.com/api/checkout/payment",{
                     tokenId: stripeToken.id,
                     amount: cart.total * 100,
                 });

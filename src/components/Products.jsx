@@ -24,7 +24,7 @@ const Products = ({category, filters, sort}) => {
     useEffect(()=>{
         const getProducts = async () =>{
             try{
-                const response = await axios.get(category ? `http://localhost:5000/api/products?category=${category}` : "http://localhost:5000/api/products");
+                const response = await axios.get(category ? `https://jesus-react-ecommerce.herokuapp.com/api/products?category=${category}` : "https://jesus-react-ecommerce.herokuapp.com/api/products");
                 setProducts(response.data);
             }catch(err){
                 console.log(err);

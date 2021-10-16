@@ -83,7 +83,6 @@ const Register = () => {
                 </Form>
                 <Button>CREATE</Button>
             </Wrapper>
-            
         </Container>
     )
 }
