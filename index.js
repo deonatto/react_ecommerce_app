@@ -24,7 +24,6 @@ app.use("/api/checkout", stripeRoute);
 
 mongoose.connect(process.env.MONGO_URL).then(()=>{
         console.log('succesfully connected to database');
-        //initial();
     }).catch(err =>{
         console.error("Connection error", err);
     

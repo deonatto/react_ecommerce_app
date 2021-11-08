@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// check if token is valid
 const verifyToken = (req,res,next)=>{
     const authHeader = req.headers.token;
     if(authHeader){
@@ -17,6 +18,7 @@ const verifyToken = (req,res,next)=>{
     }
 };
 
+//check if users id are the same or if user have admin rights
 const verifyTokenAndAuthorization = (req,res,next)=>{
     verifyToken(req,res, ()=>{
         if(req.user.id === req.params.id || req.user.isAdmin){
@@ -27,6 +29,7 @@ const verifyTokenAndAuthorization = (req,res,next)=>{
     })
 }
 
+// check if user have admin rights
 const verifyTokenAndAdmin = (req,res,next)=>{
     verifyToken(req,res, ()=>{
         if(req.user.isAdmin){

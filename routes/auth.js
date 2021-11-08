@@ -38,7 +38,8 @@ router.post("/login", async (req,res)=>{
                     isAdmin: user.isAdmin
                     }, process.env.JWT_SEC, {expiresIn:"3d"});
 
-                //destructure user to send all information but password
+                //destructure user in password and others() to send all information but password to front
+                //we use user._doc because is where mongoDB store the document with information
                 const {password, ...others} = user._doc;
                 res.status(200).json({...others, token});
             }
