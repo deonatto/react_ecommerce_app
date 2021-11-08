@@ -69,6 +69,7 @@ const Login = () => {
     const error = useSelector((state)=> state.user.error);
     const dispatch = useDispatch();
 
+    //login function
     const handleClick = async (e) =>{
         e.preventDefault(); 
         try{

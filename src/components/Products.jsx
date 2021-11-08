@@ -21,6 +21,7 @@ const Products = ({category, filters, sort}) => {
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
 
+    // hook to get products from a category or all products
     useEffect(()=>{
         const getProducts = async () =>{
             try{
@@ -34,6 +35,7 @@ const Products = ({category, filters, sort}) => {
         getProducts();
     },[category])
     
+    // get products when color or size are modified
     useEffect(()=>{
         if(category){
             setFilteredProducts(
@@ -42,7 +44,7 @@ const Products = ({category, filters, sort}) => {
         }
     },[products,category, filters]);
 
-
+    // sort array of products
     useEffect(()=>{
         if(sort === "newest"){
             setFilteredProducts((prev)=>

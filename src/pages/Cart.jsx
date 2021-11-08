@@ -227,7 +227,7 @@ const Button = styled.button `
 `;
 
 const Cart = () => {
-
+    
     const cart = useSelector(state => state.cart);
     const user = useSelector((state)=> state.user.currentUser);
     const [stripeToken, setStripeToken] = useState(null);

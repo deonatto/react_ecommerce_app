@@ -175,6 +175,7 @@ const Button = styled.button `
 
 const Product = () => {
     const location = useLocation();
+    // product id
     const id = location.pathname.split("/")[2];
     const user = useSelector((state)=> state.user.currentUser);
     const [product, setProduct] = useState({});
@@ -183,6 +184,7 @@ const Product = () => {
     const [size, setSize] = useState("");
     const dispatch = useDispatch();
 
+    // get product
     useEffect(()=>{
         try{
             const getProduct = async () =>{
@@ -195,10 +197,10 @@ const Product = () => {
         }
     },[id]);
 
+    //add product to cart if user is logged in
     const handleClick =()=> {
         try{
             if(user){
-                //updateCart
                 dispatch(addProduct({...product, quantity: quantity, color:color, size:size}));
             }
         }catch(err){

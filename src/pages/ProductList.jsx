@@ -51,6 +51,7 @@ const ProductList = () => {
     const [filters, setFilters] = useState({});
     const [sort, setSort] = useState("newest");
 
+    //function to set color and size
     const handleFilters = (e) =>{
         const value = e.target.value; 
         setFilters({

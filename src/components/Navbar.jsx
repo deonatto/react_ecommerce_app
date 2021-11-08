@@ -99,15 +99,18 @@ const MenuItem = styled.div `
 
 const Navbar = () => {
 
+    // get user and quantity of cars from redux store 
     const quantity = useSelector(state => state.cart.quantity);
     const user = useSelector((state)=> state.user.currentUser);
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // call logout reducer from user slice
     const handleLogout = () =>{
         dispatch(logout());
         history.push("/login");
     }
+    
     return (
         <Container>
             <Wrapper>
